@@ -8,6 +8,7 @@ GEM
   specs:
     minitest (5.3.5)
     rake (10.3.2)
+    vcr (2.9.0)
 
 PLATFORMS
   ruby
@@ -17,3 +18,4 @@ DEPENDENCIES
   caixa_simples!
   minitest
   rake
+  vcr
