@@ -1,5 +1,7 @@
 module CaixaSimples
   class Contact
+    RESOURCE_ENDPOINT = '/api/contacts'
+
     attr_accessor :name
 
     # this is a company?
@@ -15,20 +17,35 @@ module CaixaSimples
 
     attr_reader :request_attributes
 
+    attr_reader :result
+
     def initialize(args = {})
       args.each {|k, v| self.send("#{k}=", v) }
     end
 
-    def perform_request_attributes
-      @request_attributes = {}
+    def request_attributes
+      @request_attributes ||= {
+        name: name,
+        legal_person: legal_person,
+        federal_registry: federal_registry,
+        state_registry: state_registry,
+        phone: phone,
+        reference_code: reference_code,
+        address_attributes: address
+      }
+    end
 
-      @request_attributes[:name]                = name
-      @request_attributes[:legal_person]        = legal_person
-      @request_attributes[:federal_registry]    = federal_registry
-      @request_attributes[:state_registry]      = state_registry
-      @request_attributes[:phone]               = phone
-      @request_attributes[:reference_code]      = reference_code
-      @request_attributes[:address_attributes]  = address
+    def create
+      request_params = { self.name.downcase => request_attributes }
+      @result ||= Restful.new(request_params, RESOURCE_ENDPOINT).create
+    end
+
+    def query
+      @result ||= Restful.new(request_attributes, RESOURCE_ENDPOINT).query
+    end
+
+    def self.find(id)
+      @result ||= Restful.new({}, RESOURCE_ENDPOINT).find(id)
     end
   end
 end

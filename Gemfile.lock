@@ -2,13 +2,26 @@ PATH
   remote: .
   specs:
     caixa_simples (0.0.1)
+      httparty
 
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.3.6)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.1)
     minitest (5.3.5)
+    multi_xml (0.5.5)
     rake (10.3.2)
+    safe_yaml (1.0.3)
     vcr (2.9.0)
+    webmock (1.17.4)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
@@ -19,3 +32,4 @@ DEPENDENCIES
   minitest
   rake
   vcr
+  webmock

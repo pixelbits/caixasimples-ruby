@@ -6,6 +6,6 @@ class SupplierTest < MiniTest::Test
   end
 
   def test_endpoint
-    assert_equal @supplier.endpoint, 'http://www.caixasimples.com/api/suppliers'
+    assert_equal CaixaSimples::Supplier::RESOURCE_ENDPOINT, '/api/suppliers'
   end
 end

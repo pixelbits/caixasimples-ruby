@@ -25,8 +25,6 @@ class ContactTest < MiniTest::Test
 
 
   def test_perform_request_attributes
-    @contact.perform_request_attributes
-
     assert_request_attribute :name, @contact.name
     assert_request_attribute :legal_person, @contact.legal_person
     assert_request_attribute :federal_registry, @contact.federal_registry

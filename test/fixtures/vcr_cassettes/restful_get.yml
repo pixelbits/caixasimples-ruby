@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/suppliers?api_token=<API_KEY>&name=nando&reference_code=2341243
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"1fb607be48f4af37100c80bea0a5797a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - request_method=GET; path=/
+      X-Request-Id:
+      - b6fdf6e6-aaef-450a-8e71-a0c428dfb826
+      X-Runtime:
+      - '0.031954'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":22,"uuid":null,"referenceCode":"2341243","name":"nando","federalRegistry":null,"phone":null,"legalPerson":null,"street":null,"number":null,"postalCode":null,"district":null,"city":null}]'
+    http_version: 
+  recorded_at: Thu, 26 Jun 2014 23:38:37 GMT
+recorded_with: VCR 2.9.0
