@@ -28,7 +28,7 @@ module CaixaSimples
         phone: phone,
         reference_code: reference_code,
         address_attributes: address
-      }
+      }.select { |_k, v| !v.to_s.empty? }
     end
 
     def resource_endpoint

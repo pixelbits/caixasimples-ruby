@@ -41,4 +41,11 @@ class ContactTest < MiniTest::Test
     assert_request_attribute :reference_code, @contact.reference_code
     assert_request_attribute :address_attributes, @contact.address
   end
+
+  def text_dont_send_if_value_is_empty
+    @contact.phone = nil
+    @contact.reference_code = nil
+    refute @contact.request_attributes.key?(:phone)
+    refute @contact.request_attributes.key?(:reference_code)
+  end
 end
