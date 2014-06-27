@@ -15,8 +15,6 @@ module CaixaSimples
 
     attr_reader :request_attributes
 
-    attr_reader :result
-
     def initialize(args = {})
       args.each {|k, v| self.send("#{k}=", v) }
     end
@@ -37,8 +35,12 @@ module CaixaSimples
       '/api/contacts'
     end
 
+    def required_key
+      :contact
+    end
+
     def create
-      request_params = { self.name.downcase => request_attributes }
+      request_params = { required_key => request_attributes }
       @result ||= Restful.new(request_params, resource_endpoint).create
     end
 
