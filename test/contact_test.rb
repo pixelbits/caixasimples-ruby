@@ -24,6 +24,10 @@ class ContactTest < MiniTest::Test
   end
 
 
+  def test_endpoint
+    assert_equal @contact.resource_endpoint, '/api/contacts'
+  end
+
   def test_perform_request_attributes
     assert_request_attribute :name, @contact.name
     assert_request_attribute :legal_person, @contact.legal_person

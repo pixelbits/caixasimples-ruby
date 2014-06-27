@@ -1,7 +1,5 @@
 module CaixaSimples
   class Contact
-    RESOURCE_ENDPOINT = '/api/contacts'
-
     attr_accessor :name
 
     # this is a company?
@@ -35,17 +33,21 @@ module CaixaSimples
       }
     end
 
+    def resource_endpoint
+      '/api/contacts'
+    end
+
     def create
       request_params = { self.name.downcase => request_attributes }
-      @result ||= Restful.new(request_params, RESOURCE_ENDPOINT).create
+      @result ||= Restful.new(request_params, resource_endpoint).create
     end
 
     def query
-      @result ||= Restful.new(request_attributes, RESOURCE_ENDPOINT).query
+      @result ||= Restful.new(request_attributes, resource_endpoint).query
     end
 
     def self.find(id)
-      @result ||= Restful.new({}, RESOURCE_ENDPOINT).find(id)
+      @result ||= Restful.new({}, resource_endpoint).find(id)
     end
   end
 end

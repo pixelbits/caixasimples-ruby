@@ -6,6 +6,6 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_endpoint
-    assert_equal CaixaSimples::Customer::RESOURCE_ENDPOINT, '/api/customers'
+    assert_equal @customer.resource_endpoint, '/api/customers'
   end
 end

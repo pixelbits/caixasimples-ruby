@@ -6,6 +6,6 @@ class SupplierTest < MiniTest::Test
   end
 
   def test_endpoint
-    assert_equal CaixaSimples::Supplier::RESOURCE_ENDPOINT, '/api/suppliers'
+    assert_equal @supplier.resource_endpoint, '/api/suppliers'
   end
 end
