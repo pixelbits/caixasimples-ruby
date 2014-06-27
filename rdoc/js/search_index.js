@@ -1,1 +1,0 @@
-var search_data = {"index":{"searchIndex":["caixasimples","readme"],"longSearchIndex":["caixasimples",""],"info":[["Caixasimples","","Caixasimples.html","",""],["README","","README_rdoc.html","","<p>Caixasimples\n<p>This project rocks and uses MIT-LICENSE.\n"]]}}
