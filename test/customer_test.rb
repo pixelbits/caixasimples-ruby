@@ -6,7 +6,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_endpoint
-    assert_equal @customer.resource_endpoint, '/api/customers'
+    assert_equal @customer.class.resource_endpoint, '/api/customers'
   end
 
   def test_required_key

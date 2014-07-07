@@ -25,7 +25,7 @@ class ContactTest < MiniTest::Test
 
 
   def test_endpoint
-    assert_equal @contact.resource_endpoint, '/api/contacts'
+    assert_equal @contact.class.resource_endpoint, '/api/contacts'
   end
 
   def test_required_key

@@ -6,7 +6,7 @@ class SupplierTest < MiniTest::Test
   end
 
   def test_endpoint
-    assert_equal @supplier.resource_endpoint, '/api/suppliers'
+    assert_equal @supplier.class.resource_endpoint, '/api/suppliers'
   end
 
   def test_required_key
