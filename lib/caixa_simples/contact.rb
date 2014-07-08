@@ -1,6 +1,9 @@
 module CaixaSimples
   class Contact
+
+    attr_accessor :id
     attr_accessor :name
+    attr_accessor :email
 
     # this is a company?
     attr_accessor :legal_person
@@ -16,7 +19,7 @@ module CaixaSimples
     attr_reader :request_attributes
 
     def self.resource_endpoint
-      '/api/contacts'
+      :contacts
     end
 
     def initialize(args = {})
@@ -25,7 +28,9 @@ module CaixaSimples
 
     def request_attributes
       @request_attributes ||= {
+        id: id,
         name: name,
+        email: email,
         legal_person: legal_person,
         federal_registry: federal_registry,
         state_registry: state_registry,
@@ -36,8 +41,11 @@ module CaixaSimples
     end
 
     def create
-      request_params = { required_key => request_attributes }
-      Restful.new(request_params, self.resource_endpoint).create
+      Restful.new(request_attributes, self.class.resource_endpoint).create
+    end
+
+    def update
+      Restful.new(request_attributes, self.class.resource_endpoint).update
     end
 
     def self.query(search_fields)

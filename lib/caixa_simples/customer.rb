@@ -1,7 +1,7 @@
 module CaixaSimples
   class Customer < Contact
     def self.resource_endpoint
-      '/api/customers'
+      :customers
     end
   end
 end
