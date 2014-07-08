@@ -8,8 +8,4 @@ class SupplierTest < MiniTest::Test
   def test_endpoint
     assert_equal @supplier.class.resource_endpoint, '/api/suppliers'
   end
-
-  def test_required_key
-    assert_equal @supplier.required_key, :supplier
-  end
 end

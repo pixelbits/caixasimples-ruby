@@ -5,7 +5,7 @@ http_interactions:
     uri: http://www.caixasimples.com/api/suppliers
     body:
       encoding: UTF-8
-      string: name=nando&reference_code=2341243&api_token=<API_KEY>
+      string: name=Americanas&api_token=<API_KEY>
     headers: {}
   response:
     status:
@@ -15,7 +15,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 07 Jul 2014 22:37:21 GMT
+      - Mon, 07 Jul 2014 22:45:00 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -23,31 +23,31 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=def40a595226aef33fae4ea6619bf70e31404772641817; expires=Mon, 23-Dec-2019
+      - __cfduid=d1f077e5505025433b290a52518c2a0961404773100025; expires=Mon, 23-Dec-2019
         23:50:00 GMT; path=/; domain=.caixasimples.com; HttpOnly
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - '"937c71036191d3844084ad64287e376b"'
+      - '"4d5ec8392d7bce32dc7a06ddac3afcec"'
       Location:
-      - http://www.caixasimples.com/app/suppliers/221
+      - http://www.caixasimples.com/app/suppliers/223
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Request-Id:
-      - a077fe24-4b53-4436-8d8e-28b5a8cdb4a3
+      - a72c08cd-492f-416e-897f-4efcbe302d9b
       X-Runtime:
-      - '0.054594'
+      - '0.036973'
       X-Ua-Compatible:
       - chrome=1
       X-Xss-Protection:
       - 1; mode=block
       Cf-Ray:
-      - 146786b35b520321-MIA
+      - 146791e323af07b5-MIA
     body:
       encoding: UTF-8
-      string: '{"id":221,"referenceCode":"2341243","name":"nando","federalRegistry":null,"phone":null,"legalPerson":null,"street":null,"number":null,"postalCode":null,"district":null,"city":null}'
+      string: '{"id":223,"referenceCode":null,"name":"Americanas","federalRegistry":null,"phone":null,"legalPerson":null,"street":null,"number":null,"postalCode":null,"district":null,"city":null}'
     http_version: 
-  recorded_at: Mon, 07 Jul 2014 22:37:24 GMT
+  recorded_at: Mon, 07 Jul 2014 22:45:02 GMT
 recorded_with: VCR 2.9.0

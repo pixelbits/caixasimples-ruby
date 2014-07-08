@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/api/suppliers/22?api_token=<API_KEY>
+    uri: http://www.caixasimples.com/api/suppliers/221?api_token=<API_KEY>&name=nando&reference_code=2341243
     body:
       encoding: US-ASCII
       string: ''
@@ -12,31 +12,41 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Ua-Compatible:
-      - chrome=1
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 07 Jul 2014 22:39:30 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"c29bc83fe49c42fcc0d9137e482329f5"'
+      Content-Length:
+      - '180'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d29e3016a6d3168a5164cd9868d7c8fac1404772770223; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.caixasimples.com; HttpOnly
+      - request_method=GET; path=/
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - request_method=GET; path=/
+      Etag:
+      - '"937c71036191d3844084ad64287e376b"'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
       X-Request-Id:
-      - 677ca829-15f8-4c0b-a833-401486855a09
+      - 3dfaf216-4f42-46b7-9836-229a38e5930a
       X-Runtime:
-      - '0.024777'
-      Transfer-Encoding:
-      - chunked
+      - '0.035112'
+      X-Ua-Compatible:
+      - chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Ray:
+      - 146789d5edf70321-MIA
     body:
       encoding: UTF-8
-      string: '{"id":22,"referenceCode":"2341243","name":"nando","federalRegistry":null,"phone":null,"legalPerson":null,"street":null,"number":null,"postalCode":null,"district":null,"city":null}'
+      string: '{"id":221,"referenceCode":"2341243","name":"nando","federalRegistry":null,"phone":null,"legalPerson":null,"street":null,"number":null,"postalCode":null,"district":null,"city":null}'
     http_version: 
-  recorded_at: Thu, 26 Jun 2014 23:38:00 GMT
+  recorded_at: Mon, 07 Jul 2014 22:39:33 GMT
 recorded_with: VCR 2.9.0

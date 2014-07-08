@@ -1,10 +1,10 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://www.caixasimples.com/api/suppliers?api_token=<API_KEY>&name=nando&reference_code=2341243
+    method: patch
+    uri: http://www.caixasimples.com/api/suppliers/223?api_token=<API_KEY>&id=223&name=Americanas.com
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers: {}
   response:
@@ -15,38 +15,37 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 07 Jul 2014 22:37:24 GMT
+      - Tue, 08 Jul 2014 14:40:26 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '182'
+      - '184'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dd1aead43a2bb1a240a41668576ff1e591404772643765; expires=Mon, 23-Dec-2019
+      - __cfduid=da72527eddd75a730061f97da8b9cb5551404830426650; expires=Mon, 23-Dec-2019
         23:50:00 GMT; path=/; domain=.caixasimples.com; HttpOnly
-      - request_method=GET; path=/
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - '"92cac32740b7f11f53bdb21867c66b54"'
+      - '"e3719cc8953989b540273883997f2b9e"'
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Request-Id:
-      - 5145cfd4-6fbf-4fe8-b6e9-1b0e96ce3769
+      - d2e19b6d-f6ae-40d5-a522-02114bd126b7
       X-Runtime:
-      - '0.127617'
+      - '0.127057'
       X-Ua-Compatible:
       - chrome=1
       X-Xss-Protection:
       - 1; mode=block
       Cf-Ray:
-      - 146786bf8b720321-MIA
+      - 146d0976998107b5-MIA
     body:
       encoding: UTF-8
-      string: '[{"id":221,"referenceCode":"2341243","name":"nando","federalRegistry":null,"phone":null,"legalPerson":null,"street":null,"number":null,"postalCode":null,"district":null,"city":null}]'
+      string: '{"id":223,"referenceCode":null,"name":"Americanas.com","federalRegistry":null,"phone":null,"legalPerson":null,"street":null,"number":null,"postalCode":null,"district":null,"city":null}'
     http_version: 
-  recorded_at: Mon, 07 Jul 2014 22:37:26 GMT
+  recorded_at: Tue, 08 Jul 2014 14:40:28 GMT
 recorded_with: VCR 2.9.0

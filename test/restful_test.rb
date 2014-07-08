@@ -3,12 +3,11 @@ require 'minitest/mock'
 
 class RestfulTest < MiniTest::Test
   def setup
-    @resource_endpoint = '/api/suppliers'
-    @params = { api_key: '1234' }
+    @resource_endpoint = :suppliers
+    @params = { name: 'nando', reference_code: 2341243 }
   end
 
   def test_create
-    @params[:supplier] = { name: 'nando', reference_code: 2341243 }
     @restful = CaixaSimples::Restful.new(@params, @resource_endpoint)
 
     response = VCR.use_cassette(:restful_create) { @restful.create }
@@ -16,7 +15,6 @@ class RestfulTest < MiniTest::Test
   end
 
   def test_query
-    @params.merge(name: 'nando', reference_code: 2341243)
     restful = CaixaSimples::Restful.new(@params, @resource_endpoint)
 
     response = VCR.use_cassette(:restful_get) { restful.query }
@@ -25,7 +23,20 @@ class RestfulTest < MiniTest::Test
 
   def test_find
     restful = CaixaSimples::Restful.new(@params, @resource_endpoint)
-    response = VCR.use_cassette(:restful_find) { restful.find(22) }
+    response = VCR.use_cassette(:restful_find) { restful.find(221) }
     assert_equal response['name'], 'nando'
   end
+
+  def test_update
+    @params = { name: 'Americanas' }
+    request = CaixaSimples::Restful.new(@params, @resource_endpoint)
+    supplier = VCR.use_cassette(:restful_create_supplier) { request.create }
+
+    @params.merge!(id: supplier['id'], name: 'Americanas.com')
+    request = CaixaSimples::Restful.new(@params, @resource_endpoint)
+    updated_supplier = VCR.use_cassette(:restful_update) { request.update }
+
+    assert_equal updated_supplier['name'], 'Americanas.com'
+  end
 end
+

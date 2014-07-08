@@ -8,8 +8,4 @@ class CustomerTest < MiniTest::Test
   def test_endpoint
     assert_equal @customer.class.resource_endpoint, '/api/customers'
   end
-
-  def test_required_key
-    assert_equal @customer.required_key, :customer
-  end
 end

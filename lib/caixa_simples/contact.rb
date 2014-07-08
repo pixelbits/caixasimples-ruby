@@ -35,10 +35,6 @@ module CaixaSimples
       }.select { |_k, v| !v.to_s.empty? }
     end
 
-    def required_key
-      :contact
-    end
-
     def create
       request_params = { required_key => request_attributes }
       Restful.new(request_params, self.resource_endpoint).create

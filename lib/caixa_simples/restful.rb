@@ -12,15 +12,24 @@ module CaixaSimples
     end
 
     def create
-      self.class.post(resource_endpoint, body: params)
+      self.class.post(endpoint, body: params)
     end
 
     def query
-      self.class.get(resource_endpoint, query: params)
+      self.class.get(endpoint, query: params)
+    end
+
+    def update
+      self.class.patch("#{endpoint}/#{params[:id]}", query: params)
     end
 
     def find(id)
-      self.class.get("#{resource_endpoint}/#{id}", query: params)
+      self.class.get("#{endpoint}/#{id}", query: params)
+    end
+
+    private
+    def endpoint
+      "/api/#{resource_endpoint}"
     end
   end
 end
